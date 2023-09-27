@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int e_maior_recur(int vetor[], int tamanho) {
+    if (tamanho == 1) {
+        return vetor[0]; 
+    }
+
+    int m_rest = e_maior_recur(vetor, tamanho - 1);
+
+    if (vetor[tamanho - 1] > m_rest) {
+        return vetor[tamanho - 1]; 
+    } else {
+        return m_rest; 
+    }
+}
+
+int main() {
+    int vetor[] = {12, 34, 56, 78, 90, 45, 23};
+    int tamanho = sizeof(vetor) / sizeof(vetor[0]);
+
+    int maior = e_maior_recur(vetor, tamanho);
+
+    printf("O maior é: %d\n", maior);
+
+    return 0;
+}
