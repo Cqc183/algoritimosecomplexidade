@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int encontramaior(int vetor[], int tamanho) {
+    if (tamanho <= 0) {
+        printf("Vetor vazio.\n");
+        return -1; // Retorna -1 se o vetor estiver vazio.
+    }
+
+    int maior = vetor[0]; 
+
+    for (int i = 1; i < tamanho; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i]; 
+        }
+    }
+
+    return maior;
+}
+
+int main() {
+    int vetor[] = {12, 34, 56, 78, 90, 45, 23};
+    int tamanho = sizeof(vetor) / sizeof(vetor[0]);
+
+    int maior = encontramaior(vetor, tamanho);
+
+    if (maior != -1) {
+        printf("O maior número no vetor é: %d\n", maior);
+    }
+
+    return 0;
+}
