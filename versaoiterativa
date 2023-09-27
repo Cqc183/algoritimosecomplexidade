@@ -24,7 +24,7 @@ int main() {
     int maior = encontramaior(vetor, tamanho);
 
     if (maior != -1) {
-        printf("O maior número no vetor é: %d\n", maior);
+        printf("Maior: %d\n", maior);
     }
 
     return 0;
